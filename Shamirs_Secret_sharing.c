@@ -14,7 +14,7 @@
  *	eeealgo.c HAS BEEN USED TO USE gcd() FUNCTION SO THAT INVERSE CAN BE CALCULATED.
  *	Usage: gcd(a, b, P) 
  *	Return type: INT
-*/
+ **/
 
 #define W 5
 #define T 3
@@ -22,6 +22,10 @@
 #define MOD %
 #define P 17
 
+/*
+ *	IF ANY OF THE PARAMETERS ABOVE ARE CHANGED, MAKE SURE TO CHANGE ARRAY'S "a" AND "arr" IN MAIN.
+ *
+ **/
 
 void lagrange(int *ss, int w, int *t, int size)
 {
@@ -56,7 +60,7 @@ void lagrange(int *ss, int w, int *t, int size)
 			A = A MOD P;
 		}
 
-		printf("\nShares are :%d:", A);
+		printf("\nSecret is : %d:", A);
 	
 //	return 0;
 }
@@ -92,12 +96,12 @@ int main()
 		}
 		ss[i] = congu;
 	}
-	printf("\nSecrets are : ");	
+	printf("\nShares are : ");	
 	for (i = 1; i <= w; i++) {
 		printf("%d ", ss[i]);
 	}
 
-	lagrange(ss, w, arr, 3);
+	lagrange(ss, w, arr, T);
 	return 0;
 }
 
